@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure Login - Om Sai College</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-box">
+      <h2>LOGIN</h2>
+      <form onsubmit="return checkLogin(event)">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">LOGIN</button>
+        <p class="error" id="error-msg" style="display:none;">Invalid credentials. Please try again.</p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function checkLogin(event) {
+      event.preventDefault();
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value.trim();
+      const error = document.getElementById('error-msg');
+
+      if (user === "AKASH" && pass === "AKASH7388") {
+        window.location.href = "school.html";
+      } else {
+        error.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
